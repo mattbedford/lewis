@@ -168,14 +168,19 @@
 
     document.documentElement.setAttribute('data-theme', theme);
 
-    document.addEventListener('click', function (e) {
-      var btn = e.target.closest('.theme-toggle');
-      if (!btn) return;
-      var current = document.documentElement.getAttribute('data-theme');
-      var next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('lc-theme', next);
-    });
+    // Bind after a tick so injected nav is in DOM
+    setTimeout(function () {
+      document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var current = document.documentElement.getAttribute('data-theme');
+          var next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('lc-theme', next);
+        });
+      });
+    }, 0);
   }
 
   /* ------------------------------------------
@@ -193,6 +198,20 @@
   /* ------------------------------------------
      Build an image element or placeholder
   ------------------------------------------ */
+  /* Check WebP support once */
+  var supportsWebP = false;
+  (function () {
+    var canvas = document.createElement('canvas');
+    if (canvas.getContext && canvas.getContext('2d')) {
+      supportsWebP = canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    }
+  })();
+
+  function toWebPSrc(src) {
+    if (!supportsWebP) return src;
+    return src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+  }
+
   function buildImage(src, alt, color, className) {
     var img = new Image();
     img.alt = alt || '';
@@ -204,6 +223,11 @@
     };
 
     img.onerror = function () {
+      // If WebP failed, try the original JPG
+      if (img.src !== src) {
+        img.src = src;
+        return;
+      }
       // Replace with coloured placeholder
       var placeholder = document.createElement('div');
       placeholder.className = 'project-card__placeholder' + (className ? ' ' + className : '');
@@ -212,7 +236,7 @@
       img.replaceWith(placeholder);
     };
 
-    img.src = src;
+    img.src = toWebPSrc(src);
     return img;
   }
 

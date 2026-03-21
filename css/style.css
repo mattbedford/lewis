@@ -4,22 +4,22 @@
 
 /* --- Custom Properties --- */
 :root {
-  /* Palette — warm paper tones */
-  --bg:              #f4f1eb;
-  --bg-alt:          #ece8e0;
+  /* Palette — cool, grounded tones */
+  --bg:              #f3f3f0;
+  --bg-alt:          #eaeae6;
   --text:            #1c1c1c;
-  --text-secondary:  #7a7570;
-  --text-tertiary:   #b0aaa2;
-  --border:          #ddd8d0;
-  --grid-line:       rgba(180, 172, 160, 0.12);
-  --accent:          #b47a4a;
-  --accent-hover:    #9a6538;
-  --card-shadow:     rgba(120, 80, 40, 0.08);
-  --card-shadow-hover: rgba(120, 80, 40, 0.18);
-  --blob-1:          rgba(180, 122, 74, 0.06);
-  --blob-2:          rgba(100, 120, 160, 0.05);
-  --nav-bg:          rgba(244, 241, 235, 0.85);
-  --overlay:         rgba(244, 241, 235, 0.95);
+  --text-secondary:  #6e6e6e;
+  --text-tertiary:   #a0a0a0;
+  --border:          #d8d8d4;
+  --grid-line:       rgba(160, 160, 155, 0.1);
+  --accent:          #5a6f7a;
+  --accent-hover:    #475a64;
+  --card-shadow:     rgba(40, 50, 60, 0.07);
+  --card-shadow-hover: rgba(40, 50, 60, 0.15);
+  --blob-1:          rgba(90, 111, 122, 0.04);
+  --blob-2:          rgba(120, 130, 125, 0.04);
+  --nav-bg:          rgba(243, 243, 240, 0.88);
+  --overlay:         rgba(243, 243, 240, 0.95);
 
   /* Typography */
   --font-display: 'Syne', sans-serif;
@@ -52,21 +52,21 @@
 
 /* --- Dark Mode --- */
 [data-theme="dark"] {
-  --bg:              #141312;
-  --bg-alt:          #1e1d1b;
-  --text:            #e8e5e0;
-  --text-secondary:  #8a8580;
-  --text-tertiary:   #4a4540;
-  --border:          #2a2825;
-  --grid-line:       rgba(100, 92, 80, 0.1);
-  --accent:          #d4956a;
-  --accent-hover:    #e0a87d;
-  --card-shadow:     rgba(0, 0, 0, 0.15);
-  --card-shadow-hover: rgba(0, 0, 0, 0.35);
-  --blob-1:          rgba(180, 122, 74, 0.04);
-  --blob-2:          rgba(100, 120, 160, 0.03);
-  --nav-bg:          rgba(20, 19, 18, 0.88);
-  --overlay:         rgba(20, 19, 18, 0.95);
+  --bg:              #141414;
+  --bg-alt:          #1e1e1e;
+  --text:            #e5e5e2;
+  --text-secondary:  #8a8a88;
+  --text-tertiary:   #4a4a48;
+  --border:          #2a2a28;
+  --grid-line:       rgba(100, 100, 96, 0.08);
+  --accent:          #8da5b3;
+  --accent-hover:    #a3b8c5;
+  --card-shadow:     rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: rgba(0, 0, 0, 0.4);
+  --blob-1:          rgba(90, 111, 122, 0.03);
+  --blob-2:          rgba(120, 130, 125, 0.03);
+  --nav-bg:          rgba(20, 20, 20, 0.88);
+  --overlay:         rgba(20, 20, 20, 0.95);
 }
 
 /* --- Reset --- */
@@ -194,9 +194,14 @@ ul, ol {
 }
 
 /* All page content sits above backgrounds */
-main, header, footer {
+main, footer {
   position: relative;
   z-index: 1;
+}
+
+header {
+  position: relative;
+  z-index: 200;
 }
 
 /* --- Typography --- */
@@ -787,14 +792,13 @@ h1, h2, h3, h4 {
   aspect-ratio: 3 / 4;
   background-color: var(--bg-alt);
   border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: var(--text-h1);
-  font-weight: 800;
-  color: var(--text-tertiary);
-  opacity: 0.3;
+  overflow: hidden;
+}
+
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about__body p {
