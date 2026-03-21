@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lewis Clegg — Graphic Designer</title>
+  <meta name="description" content="Lewis Clegg is a graphic designer based in Halifax, UK, specialising in branding, editorial design, and print.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSON-LD: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Lewis Clegg",
+      "jobTitle": "Graphic Designer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Halifax",
+        "addressRegion": "West Yorkshire",
+        "addressCountry": "GB"
+      },
+      "knowsAbout": ["Graphic Design", "Branding", "Editorial Design", "Print Design", "Identity Design"],
+      "url": "https://lewisclegg.com",
+      "email": "hello@lewisclegg.com"
+    }
+  }
+  </script>
+  <!-- JSON-LD: Projects (injected by JS) -->
+  <script type="application/ld+json" id="projects-schema"></script>
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__monogram" aria-hidden="true">LC</div>
+        <h1 class="hero__name">Lewis Clegg</h1>
+        <p class="hero__subtitle">Graphic Designer &mdash; Halifax</p>
+        <div class="hero__rule" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__label">Selected Work</span>
+          <span class="section-header__count" id="project-count"></span>
+        </div>
+        <div class="project-grid reveal-stagger" id="project-grid">
+          <!-- Rendered by JS from projects.json -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--1" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--2" aria-hidden="true"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

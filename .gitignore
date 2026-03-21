@@ -1,0 +1,22 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Original unprocessed assets (large files)
+ORIGINAL-ASSETS/
+
+# Temp files
+*.tmp
+*.bak
+*.log
+
+# Claude
+.claude/
