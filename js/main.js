@@ -51,6 +51,7 @@
     `;
 
     initNavScroll();
+    initNavIndicator();
     initMobileMenu();
     initContactLinks();
   }
@@ -114,6 +115,61 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  }
+
+  /* ------------------------------------------
+     Navigation: sliding indicator
+  ------------------------------------------ */
+  function initNavIndicator() {
+    var navLinks = document.querySelector('.nav__links');
+    if (!navLinks) return;
+
+    var indicator = document.createElement('span');
+    indicator.className = 'nav__indicator';
+    navLinks.appendChild(indicator);
+
+    var links = navLinks.querySelectorAll('.nav__link');
+    var activeLink = navLinks.querySelector('.nav__link--active');
+
+    function moveIndicator(el) {
+      var rect = el.getBoundingClientRect();
+      var parentRect = navLinks.getBoundingClientRect();
+      indicator.style.left = (rect.left - parentRect.left) + 'px';
+      indicator.style.width = rect.width + 'px';
+    }
+
+    // Position on active link initially (no transition)
+    if (activeLink) {
+      indicator.style.transition = 'none';
+      indicator.classList.add('nav__indicator--active');
+      moveIndicator(activeLink);
+      // Re-enable transition after paint
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          indicator.style.transition = '';
+        });
+      });
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener('mouseenter', function () {
+        moveIndicator(link);
+      });
+    });
+
+    navLinks.addEventListener('mouseleave', function () {
+      if (activeLink) {
+        moveIndicator(activeLink);
+      } else {
+        indicator.classList.remove('nav__indicator--active');
+      }
+    });
+
+    // Reposition on resize
+    window.addEventListener('resize', function () {
+      var target = activeLink || links[0];
+      if (target) moveIndicator(target);
+    });
   }
 
   /* ------------------------------------------
@@ -198,20 +254,6 @@
   /* ------------------------------------------
      Build an image element or placeholder
   ------------------------------------------ */
-  /* Check WebP support once */
-  var supportsWebP = false;
-  (function () {
-    var canvas = document.createElement('canvas');
-    if (canvas.getContext && canvas.getContext('2d')) {
-      supportsWebP = canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    }
-  })();
-
-  function toWebPSrc(src) {
-    if (!supportsWebP) return src;
-    return src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-  }
-
   function buildImage(src, alt, color, className) {
     var img = new Image();
     img.alt = alt || '';
@@ -223,12 +265,6 @@
     };
 
     img.onerror = function () {
-      // If WebP failed, try the original JPG
-      if (img.src !== src) {
-        img.src = src;
-        return;
-      }
-      // Replace with coloured placeholder
       var placeholder = document.createElement('div');
       placeholder.className = 'project-card__placeholder' + (className ? ' ' + className : '');
       placeholder.style.backgroundColor = color || 'var(--bg-alt)';
@@ -236,7 +272,7 @@
       img.replaceWith(placeholder);
     };
 
-    img.src = toWebPSrc(src);
+    img.src = src;
     return img;
   }
 

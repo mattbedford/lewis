@@ -5,17 +5,17 @@
     "subtitle": "Branding & Menu Design",
     "year": "2021",
     "tags": ["Branding", "Identity", "Print"],
-    "thumbnail": "images/projects/mamil/mamil-mockup.jpg",
+    "thumbnail": "images/projects/mamil/mamil-mockup.webp",
     "color": "#2d4a3e",
     "description": "Branding, experiential and menu design for a small chain of cycling cafes.\n\nApproached in 2021 by Dave, a keen cyclist with a long history in the catering industry, the brief was to create a brand identity for a cafe with a cycling theme. Cycling culture is notoriously stylish and steeped in the history of famous European races — the cafe needed to reflect this while maintaining a touch of humour and self-awareness.\n\nWorking closely with the client, the brand played off the often derogatory term for cyclists: the Middle Aged Man in Lycra, or MAMIL. The logomark references the cycling connection subtly, without being exclusive to cyclists.\n\nThe menus introduced secondary fonts and colours to avoid an overly oppressive, monotone look. Wall murals utilising the handlebars motif mingled with framed jerseys and homages to icons of cycling to give each cafe a real 'clubhouse' vibe.\n\nMamil went on to open a further two bars, all following this same visual identity — helping them achieve success and brand recognition across Calderdale.",
     "images": [
-      "images/projects/mamil/mamil-mockup.jpg",
-      "images/projects/mamil/mamil-menu.jpg",
-      "images/projects/mamil/mamil-drink-menu.jpg",
-      "images/projects/mamil/mamil-cup.jpg",
-      "images/projects/mamil/mamil-opening.jpg",
-      "images/projects/mamil/mamil-drinks.jpg",
-      "images/projects/mamil/mamil-bars.jpg"
+      "images/projects/mamil/mamil-mockup.webp",
+      "images/projects/mamil/mamil-menu.webp",
+      "images/projects/mamil/mamil-drink-menu.webp",
+      "images/projects/mamil/mamil-cup.webp",
+      "images/projects/mamil/mamil-opening.webp",
+      "images/projects/mamil/mamil-drinks.webp",
+      "images/projects/mamil/mamil-bars.webp"
     ]
   },
   {
@@ -24,15 +24,15 @@
     "subtitle": "Identity, Posters & Socials",
     "year": "2018",
     "tags": ["Identity", "Print", "Poster Design"],
-    "thumbnail": "images/projects/st-peters-consort/christmas-poster.jpg",
+    "thumbnail": "images/projects/st-peters-consort/christmas-poster.webp",
     "color": "#1a1a2e",
     "description": "Identity, poster design and social media for an established choir.\n\nSince 2018, leading a visual transformation for St. Peter\u2019s Consort, a choir with over four decades of history. Prior to the partnership, the group\u2019s public materials lacked a cohesive brand voice. The goal was to move their image away from \u2018homemade\u2019 aesthetics toward a professional, high-impact identity that matches the calibre of their performances.\n\nThe core of this evolution was a strategic design system. A disciplined typographic template established a clear information hierarchy, ensuring the choir is instantly recognisable across the region. This framework provides the anchor for their brand while leaving generous space for bespoke imagery that captures the unique spirit of each concert.\n\nOver the last eight years, this shift in visual professionalisation has helped redefine the Consort\u2019s reputation \u2014 transitioning them from a small local group into a widely recognised and respected fixture of the regional music scene.",
     "images": [
-      "images/projects/st-peters-consort/christmas-poster.jpg",
-      "images/projects/st-peters-consort/gloria-poster.jpg",
-      "images/projects/st-peters-consort/fain-poster.jpg",
-      "images/projects/st-peters-consort/st-john-poster.jpg",
-      "images/projects/st-peters-consort/requiem-poster.jpg"
+      "images/projects/st-peters-consort/christmas-poster.webp",
+      "images/projects/st-peters-consort/gloria-poster.webp",
+      "images/projects/st-peters-consort/fain-poster.webp",
+      "images/projects/st-peters-consort/st-john-poster.webp",
+      "images/projects/st-peters-consort/requiem-poster.webp"
     ]
   },
   {
@@ -41,21 +41,41 @@
     "subtitle": "Editorial Design & Publishing",
     "year": "2022",
     "tags": ["Editorial", "Print", "Photography"],
-    "thumbnail": "images/projects/wheelers-review/cover.jpg",
+    "thumbnail": "images/projects/wheelers-review/cover.webp",
     "color": "#8a8580",
     "description": "Self-initiated annual magazine documenting the soul of a cycling club.\n\nInspired by the tactile beauty of high-end independent journals, this annual magazine launched in 2022 to document the Halifax Imperial Wheelers cycling club. Spanning 90\u2013140 pages, these publications serve as a premium archive of the club\u2019s journey, featuring long-form ride reports, curated photography, and deep dives into local cycling history.\n\nBuilt on a rigorous modular grid, the compact A5 format provides a creative challenge: balancing dense content with impactful visual storytelling. By playing with scale and intentional white space, the layouts feel expansive and breathable despite the small scale.\n\nAs the sole editor and designer, the full production pipeline is managed end-to-end \u2014 handling everything from photography and interviews to ad sales and print management.",
     "images": [
-      "images/projects/wheelers-review/cover.jpg",
-      "images/projects/wheelers-review/contents.jpg",
-      "images/projects/wheelers-review/spread-01.jpg",
-      "images/projects/wheelers-review/spread-02.jpg",
-      "images/projects/wheelers-review/spread-03.jpg",
-      "images/projects/wheelers-review/spread-04.jpg",
-      "images/projects/wheelers-review/spread-05.jpg",
-      "images/projects/wheelers-review/spread-06.jpg",
-      "images/projects/wheelers-review/spread-07.jpg",
-      "images/projects/wheelers-review/spread-08.jpg",
-      "images/projects/wheelers-review/booklet.jpg"
+      "images/projects/wheelers-review/cover.webp",
+      "images/projects/wheelers-review/contents.webp",
+      "images/projects/wheelers-review/spread-01.webp",
+      "images/projects/wheelers-review/spread-02.webp",
+      "images/projects/wheelers-review/spread-03.webp",
+      "images/projects/wheelers-review/spread-04.webp",
+      "images/projects/wheelers-review/spread-05.webp",
+      "images/projects/wheelers-review/spread-06.webp",
+      "images/projects/wheelers-review/spread-07.webp",
+      "images/projects/wheelers-review/spread-08.webp",
+      "images/projects/wheelers-review/booklet.webp"
+    ]
+  },
+  {
+    "slug": "mixed-work",
+    "title": "Selected Works",
+    "subtitle": "Personal & Client Projects",
+    "year": "2024",
+    "tags": ["Branding", "Print", "Digital"],
+    "thumbnail": "images/projects/mixed-work/josh-joel-invite.webp",
+    "color": "#3a3a3a",
+    "description": "A curated selection of personal and client projects spanning print, digital and brand work.\n\nThis collection brings together a range of pieces created across different briefs and contexts \u2014 from event invitations and printed materials to digital design explorations. Each project presented its own challenge and constraints, but they share a common thread: a commitment to considered typography, purposeful layout, and visual impact.\n\nWhether working to a tight client brief or pursuing a self-directed concept, the approach remains the same \u2014 start with the content, respect the medium, and let the design serve the message.",
+    "images": [
+      "images/projects/mixed-work/josh-joel-invite.webp",
+      "images/projects/mixed-work/print-work-01.webp",
+      "images/projects/mixed-work/print-work-02.webp",
+      "images/projects/mixed-work/print-work-03.webp",
+      "images/projects/mixed-work/print-work-04.webp",
+      "images/projects/mixed-work/digital-work-01.webp",
+      "images/projects/mixed-work/digital-work-02.webp",
+      "images/projects/mixed-work/digital-work-03.webp"
     ]
   }
 ]
