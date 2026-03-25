@@ -1,0 +1,20 @@
+{
+  "slug": "st-peters-consort",
+  "title": "St Peter\u2019s Consort",
+  "subtitle": "Identity, Posters & Socials",
+  "year": "2018",
+  "category": "Identity",
+  "layout": "grid-2",
+  "featured": false,
+  "tags": ["Identity", "Print", "Poster Design"],
+  "thumbnail": "images/projects/st-peters-consort/christmas-poster.webp",
+  "color": "#1a1a2e",
+  "description": "Identity, poster design and social media for an established choir.\n\nSince 2018, leading a visual transformation for St. Peter\u2019s Consort, a choir with over four decades of history. Prior to the partnership, the group\u2019s public materials lacked a cohesive brand voice. The goal was to move their image away from \u2018homemade\u2019 aesthetics toward a professional, high-impact identity that matches the calibre of their performances.\n\nThe core of this evolution was a strategic design system. A disciplined typographic template established a clear information hierarchy, ensuring the choir is instantly recognisable across the region. This framework provides the anchor for their brand while leaving generous space for bespoke imagery that captures the unique spirit of each concert.\n\nOver the last eight years, this shift in visual professionalisation has helped redefine the Consort\u2019s reputation \u2014 transitioning them from a small local group into a widely recognised and respected fixture of the regional music scene.",
+  "images": [
+    "images/projects/st-peters-consort/christmas-poster.webp",
+    "images/projects/st-peters-consort/gloria-poster.webp",
+    "images/projects/st-peters-consort/fain-poster.webp",
+    "images/projects/st-peters-consort/st-john-poster.webp",
+    "images/projects/st-peters-consort/requiem-poster.webp"
+  ]
+}

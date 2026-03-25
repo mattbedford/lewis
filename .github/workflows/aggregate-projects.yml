@@ -1,0 +1,40 @@
+name: Aggregate Projects
+
+on:
+  push:
+    paths:
+      - 'content/projects/**'
+
+permissions:
+  contents: write
+
+jobs:
+  aggregate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Aggregate project JSON files
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const dir = 'content/projects';
+          const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+          const projects = files.map(f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+          projects.sort((a, b) => {
+            if (a.featured && !b.featured) return -1;
+            if (!a.featured && b.featured) return 1;
+            return (b.year || '').localeCompare(a.year || '');
+          });
+          fs.writeFileSync('projects.json', JSON.stringify(projects, null, 2) + '\n');
+          console.log('Aggregated ' + projects.length + ' projects');
+          "
+
+      - name: Commit if changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add projects.json
+          git diff --staged --quiet || git commit -m 'Auto-aggregate projects.json from content/projects'
+          git push

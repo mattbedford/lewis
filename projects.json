@@ -1,38 +1,25 @@
 [
   {
-    "slug": "mamil",
-    "title": "MAMIL",
-    "subtitle": "Branding & Menu Design",
-    "year": "2021",
-    "tags": ["Branding", "Identity", "Print"],
-    "thumbnail": "images/projects/mamil/mamil-mockup.webp",
-    "color": "#2d4a3e",
-    "description": "Branding, experiential and menu design for a small chain of cycling cafes.\n\nApproached in 2021 by Dave, a keen cyclist with a long history in the catering industry, the brief was to create a brand identity for a cafe with a cycling theme. Cycling culture is notoriously stylish and steeped in the history of famous European races — the cafe needed to reflect this while maintaining a touch of humour and self-awareness.\n\nWorking closely with the client, the brand played off the often derogatory term for cyclists: the Middle Aged Man in Lycra, or MAMIL. The logomark references the cycling connection subtly, without being exclusive to cyclists.\n\nThe menus introduced secondary fonts and colours to avoid an overly oppressive, monotone look. Wall murals utilising the handlebars motif mingled with framed jerseys and homages to icons of cycling to give each cafe a real 'clubhouse' vibe.\n\nMamil went on to open a further two bars, all following this same visual identity — helping them achieve success and brand recognition across Calderdale.",
+    "slug": "mixed-work",
+    "title": "Josh & Joel",
+    "subtitle": "Wedding Identity & Stationery",
+    "year": "2024",
+    "category": "Branding",
+    "layout": "grid-2",
+    "featured": false,
+    "tags": ["Branding", "Print", "Identity"],
+    "thumbnail": "images/projects/mixed-work/josh-joel-invite.webp",
+    "color": "#3a3a3a",
+    "description": "When Josh and Joel approached me for their wedding at East Riddlesden Hall, they were clear: they wanted to eschew the traditional scripts and delicate flourishes of standard stationery in favour of something bold, playful, and reflective of their lifestyle.\n\nThe resulting identity puts typography centre stage. I began by creating a custom \u201clogo\u201d of their names, designed to be adapted across various formats and textures. For the stationery itself, I developed a kinetic typographic system where the letterforms create dynamic shapes that support the information. To ground the project in its location, I created an adaptable graphic language inspired by the architectural features of the venue, used for both iconography and on-site wayfinding. Integrated with a hand-illustrated \u201ctwo stags\u201d motif by the groom, Joel, the final suite was a tactile, high-impact celebration uniquely tailored to them.",
     "images": [
-      "images/projects/mamil/mamil-mockup.webp",
-      "images/projects/mamil/mamil-menu.webp",
-      "images/projects/mamil/mamil-drink-menu.webp",
-      "images/projects/mamil/mamil-cup.webp",
-      "images/projects/mamil/mamil-opening.webp",
-      "images/projects/mamil/mamil-drinks.webp",
-      "images/projects/mamil/mamil-bars.webp"
-    ]
-  },
-  {
-    "slug": "st-peters-consort",
-    "title": "St Peter\u2019s Consort",
-    "subtitle": "Identity, Posters & Socials",
-    "year": "2018",
-    "tags": ["Identity", "Print", "Poster Design"],
-    "thumbnail": "images/projects/st-peters-consort/christmas-poster.webp",
-    "color": "#1a1a2e",
-    "description": "Identity, poster design and social media for an established choir.\n\nSince 2018, leading a visual transformation for St. Peter\u2019s Consort, a choir with over four decades of history. Prior to the partnership, the group\u2019s public materials lacked a cohesive brand voice. The goal was to move their image away from \u2018homemade\u2019 aesthetics toward a professional, high-impact identity that matches the calibre of their performances.\n\nThe core of this evolution was a strategic design system. A disciplined typographic template established a clear information hierarchy, ensuring the choir is instantly recognisable across the region. This framework provides the anchor for their brand while leaving generous space for bespoke imagery that captures the unique spirit of each concert.\n\nOver the last eight years, this shift in visual professionalisation has helped redefine the Consort\u2019s reputation \u2014 transitioning them from a small local group into a widely recognised and respected fixture of the regional music scene.",
-    "images": [
-      "images/projects/st-peters-consort/christmas-poster.webp",
-      "images/projects/st-peters-consort/gloria-poster.webp",
-      "images/projects/st-peters-consort/fain-poster.webp",
-      "images/projects/st-peters-consort/st-john-poster.webp",
-      "images/projects/st-peters-consort/requiem-poster.webp"
+      "images/projects/mixed-work/josh-joel-invite.webp",
+      "images/projects/mixed-work/print-work-01.webp",
+      "images/projects/mixed-work/print-work-02.webp",
+      "images/projects/mixed-work/print-work-03.webp",
+      "images/projects/mixed-work/print-work-04.webp",
+      "images/projects/mixed-work/digital-work-01.webp",
+      "images/projects/mixed-work/digital-work-02.webp",
+      "images/projects/mixed-work/digital-work-03.webp"
     ]
   },
   {
@@ -40,6 +27,9 @@
     "title": "Wheelers Review",
     "subtitle": "Editorial Design & Publishing",
     "year": "2022",
+    "category": "Editorial",
+    "layout": "single",
+    "featured": false,
     "tags": ["Editorial", "Print", "Photography"],
     "thumbnail": "images/projects/wheelers-review/cover.webp",
     "color": "#8a8580",
@@ -59,23 +49,45 @@
     ]
   },
   {
-    "slug": "mixed-work",
-    "title": "Selected Works",
-    "subtitle": "Personal & Client Projects",
-    "year": "2024",
-    "tags": ["Branding", "Print", "Digital"],
-    "thumbnail": "images/projects/mixed-work/josh-joel-invite.webp",
-    "color": "#3a3a3a",
-    "description": "A curated selection of personal and client projects spanning print, digital and brand work.\n\nThis collection brings together a range of pieces created across different briefs and contexts \u2014 from event invitations and printed materials to digital design explorations. Each project presented its own challenge and constraints, but they share a common thread: a commitment to considered typography, purposeful layout, and visual impact.\n\nWhether working to a tight client brief or pursuing a self-directed concept, the approach remains the same \u2014 start with the content, respect the medium, and let the design serve the message.",
+    "slug": "mamil",
+    "title": "MAMIL",
+    "subtitle": "Branding & Menu Design",
+    "year": "2021",
+    "category": "Branding",
+    "layout": "single",
+    "featured": false,
+    "tags": ["Branding", "Identity", "Print"],
+    "thumbnail": "images/projects/mamil/mamil-mockup.webp",
+    "color": "#2d4a3e",
+    "description": "Branding, experiential and menu design for a small chain of cycling cafes.\n\nApproached in 2021 by Dave, a keen cyclist with a long history in the catering industry, the brief was to create a brand identity for a cafe with a cycling theme. Cycling culture is notoriously stylish and steeped in the history of famous European races \u2014 the cafe needed to reflect this while maintaining a touch of humour and self-awareness.\n\nWorking closely with the client, the brand played off the often derogatory term for cyclists: the Middle Aged Man in Lycra, or MAMIL. The logomark references the cycling connection subtly, without being exclusive to cyclists.\n\nThe menus introduced secondary fonts and colours to avoid an overly oppressive, monotone look. Wall murals utilising the handlebars motif mingled with framed jerseys and homages to icons of cycling to give each cafe a real \u2018clubhouse\u2019 vibe.\n\nMamil went on to open a further two bars, all following this same visual identity \u2014 helping them achieve success and brand recognition across Calderdale.",
     "images": [
-      "images/projects/mixed-work/josh-joel-invite.webp",
-      "images/projects/mixed-work/print-work-01.webp",
-      "images/projects/mixed-work/print-work-02.webp",
-      "images/projects/mixed-work/print-work-03.webp",
-      "images/projects/mixed-work/print-work-04.webp",
-      "images/projects/mixed-work/digital-work-01.webp",
-      "images/projects/mixed-work/digital-work-02.webp",
-      "images/projects/mixed-work/digital-work-03.webp"
+      "images/projects/mamil/mamil-mockup.webp",
+      "images/projects/mamil/mamil-menu.webp",
+      "images/projects/mamil/mamil-drink-menu.webp",
+      "images/projects/mamil/mamil-cup.webp",
+      "images/projects/mamil/mamil-opening.webp",
+      "images/projects/mamil/mamil-drinks.webp",
+      "images/projects/mamil/mamil-bars.webp"
+    ]
+  },
+  {
+    "slug": "st-peters-consort",
+    "title": "St Peter\u2019s Consort",
+    "subtitle": "Identity, Posters & Socials",
+    "year": "2018",
+    "category": "Identity",
+    "layout": "grid-2",
+    "featured": false,
+    "tags": ["Identity", "Print", "Poster Design"],
+    "thumbnail": "images/projects/st-peters-consort/christmas-poster.webp",
+    "color": "#1a1a2e",
+    "description": "Identity, poster design and social media for an established choir.\n\nSince 2018, leading a visual transformation for St. Peter\u2019s Consort, a choir with over four decades of history. Prior to the partnership, the group\u2019s public materials lacked a cohesive brand voice. The goal was to move their image away from \u2018homemade\u2019 aesthetics toward a professional, high-impact identity that matches the calibre of their performances.\n\nThe core of this evolution was a strategic design system. A disciplined typographic template established a clear information hierarchy, ensuring the choir is instantly recognisable across the region. This framework provides the anchor for their brand while leaving generous space for bespoke imagery that captures the unique spirit of each concert.\n\nOver the last eight years, this shift in visual professionalisation has helped redefine the Consort\u2019s reputation \u2014 transitioning them from a small local group into a widely recognised and respected fixture of the regional music scene.",
+    "images": [
+      "images/projects/st-peters-consort/christmas-poster.webp",
+      "images/projects/st-peters-consort/gloria-poster.webp",
+      "images/projects/st-peters-consort/fain-poster.webp",
+      "images/projects/st-peters-consort/st-john-poster.webp",
+      "images/projects/st-peters-consort/requiem-poster.webp"
     ]
   }
 ]
