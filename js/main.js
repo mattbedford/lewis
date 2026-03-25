@@ -10,47 +10,63 @@
      Shared HTML: Navigation
   ------------------------------------------ */
   function injectNav() {
-    const header = document.getElementById('site-header');
+    var header = document.getElementById('site-header');
     if (!header) return;
 
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    header.innerHTML = `
-      <nav class="nav" id="nav">
-        <div class="nav__inner container">
-          <a href="index.html" class="nav__logo" aria-label="Lewis Clegg — Home">LC</a>
-          <div class="nav__right">
-            <div class="nav__links">
-              <a href="index.html#work" class="nav__link${currentPage === 'index.html' || currentPage === '' ? ' nav__link--active' : ''}">Work</a>
-              <a href="about.html" class="nav__link${currentPage === 'about.html' ? ' nav__link--active' : ''}">About</a>
-              <a href="#contact" class="nav__link" data-contact>Contact</a>
-            </div>
-            <button class="theme-toggle" aria-label="Toggle dark mode">
-              <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-              </svg>
-              <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-              </svg>
-            </button>
-            <button class="nav__menu-btn" aria-label="Open menu" aria-expanded="false">
-              <span></span><span></span>
-            </button>
-          </div>
-        </div>
-        <div class="nav__mobile-menu">
-          <a href="index.html#work" class="nav__link">Work</a>
-          <a href="about.html" class="nav__link">About</a>
-          <a href="#contact" class="nav__link" data-contact>Contact</a>
-        </div>
-      </nav>
-    `;
+    header.innerHTML = '\
+      <nav class="nav" id="nav">\
+        <div class="nav__inner container">\
+          <a href="index.html" class="nav__logo" aria-label="Lewis Clegg — Home">Lewis Clegg</a>\
+          <div class="nav__right">\
+            <div class="nav__links">\
+              <a href="index.html#work" class="nav__link' + (currentPage === 'index.html' || currentPage === '' ? ' nav__link--active' : '') + '">Work</a>\
+              <a href="about.html" class="nav__link' + (currentPage === 'about.html' ? ' nav__link--active' : '') + '">About</a>\
+              <a href="#contact" class="nav__link" data-contact>Contact</a>\
+            </div>\
+            <div class="nav__actions">\
+              <a href="https://www.instagram.com/clegglewis/" target="_blank" rel="noopener noreferrer" class="nav__social" aria-label="Instagram">\
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">\
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>\
+                  <circle cx="12" cy="12" r="5"/>\
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>\
+                </svg>\
+              </a>\
+              <a href="https://www.linkedin.com/in/lewis-clegg-5aa031200/" target="_blank" rel="noopener noreferrer" class="nav__social" aria-label="LinkedIn">\
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">\
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>\
+                  <rect x="2" y="9" width="4" height="12"/>\
+                  <circle cx="4" cy="4" r="2"/>\
+                </svg>\
+              </a>\
+              <button class="theme-toggle" aria-label="Toggle dark mode">\
+                <svg class="theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">\
+                  <circle cx="12" cy="12" r="5"/>\
+                  <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>\
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>\
+                  <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>\
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>\
+                </svg>\
+                <svg class="theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">\
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>\
+                </svg>\
+              </button>\
+            </div>\
+            <button class="nav__menu-btn" aria-label="Open menu" aria-expanded="false">\
+              <span></span><span></span>\
+            </button>\
+          </div>\
+        </div>\
+        <div class="nav__mobile-menu">\
+          <a href="index.html#work" class="nav__link">Work</a>\
+          <a href="about.html" class="nav__link">About</a>\
+          <a href="#contact" class="nav__link" data-contact>Contact</a>\
+        </div>\
+      </nav>';
 
     initNavScroll();
+    initNavIndicator();
     initMobileMenu();
     initContactLinks();
   }
@@ -59,49 +75,46 @@
      Shared HTML: Footer
   ------------------------------------------ */
   function injectFooter() {
-    const footer = document.getElementById('site-footer');
+    var footer = document.getElementById('site-footer');
     if (!footer) return;
 
     footer.className = 'footer';
     footer.id = 'contact';
-    footer.innerHTML = `
-      <div class="footer__inner container">
-        <div class="footer__grid">
-          <div class="footer__col">
-            <span class="footer__logo" aria-hidden="true">LC</span>
-            <p>Lewis Clegg</p>
-            <p>Graphic Designer</p>
-          </div>
-          <div class="footer__col">
-            <h4>Location</h4>
-            <p>Halifax</p>
-            <p>United Kingdom</p>
-          </div>
-          <div class="footer__col">
-            <h4>Get in touch</h4>
-            <a href="mailto:hello@lewisclegg.com">hello@lewisclegg.com</a>
-          </div>
-          <div class="footer__col">
-            <h4>Online</h4>
-            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-          </div>
-        </div>
-        <div class="footer__bottom">
-          <p>&copy; ${new Date().getFullYear()} Lewis Clegg. All rights reserved.</p>
-        </div>
-      </div>
-    `;
+    footer.innerHTML = '\
+      <div class="container">\
+        <div class="footer__social">\
+          <a href="https://www.instagram.com/clegglewis/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">\
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">\
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>\
+              <circle cx="12" cy="12" r="5"/>\
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>\
+            </svg>\
+          </a>\
+          <a href="https://www.linkedin.com/in/lewis-clegg-5aa031200/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">\
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">\
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>\
+              <rect x="2" y="9" width="4" height="12"/>\
+              <circle cx="4" cy="4" r="2"/>\
+            </svg>\
+          </a>\
+        </div>\
+        <div class="footer__nav">\
+          <a href="index.html#work">Work</a>\
+          <a href="about.html">About</a>\
+          <a href="mailto:hello@lewisclegg.com">Contact</a>\
+        </div>\
+        <p class="footer__copyright">&copy; ' + new Date().getFullYear() + ' Lewis Clegg</p>\
+      </div>';
   }
 
   /* ------------------------------------------
      Navigation: scroll behaviour
   ------------------------------------------ */
   function initNavScroll() {
-    const nav = document.getElementById('nav');
+    var nav = document.getElementById('nav');
     if (!nav) return;
 
-    let ticking = false;
+    var ticking = false;
     function onScroll() {
       if (!ticking) {
         requestAnimationFrame(function () {
@@ -117,15 +130,67 @@
   }
 
   /* ------------------------------------------
+     Navigation: sliding indicator
+  ------------------------------------------ */
+  function initNavIndicator() {
+    var navLinks = document.querySelector('.nav__links');
+    if (!navLinks) return;
+
+    var indicator = document.createElement('span');
+    indicator.className = 'nav__indicator';
+    navLinks.appendChild(indicator);
+
+    var links = navLinks.querySelectorAll('.nav__link');
+    var activeLink = navLinks.querySelector('.nav__link--active');
+
+    function moveIndicator(el) {
+      var rect = el.getBoundingClientRect();
+      var parentRect = navLinks.getBoundingClientRect();
+      indicator.style.left = (rect.left - parentRect.left) + 'px';
+      indicator.style.width = rect.width + 'px';
+    }
+
+    if (activeLink) {
+      indicator.style.transition = 'none';
+      indicator.classList.add('nav__indicator--active');
+      moveIndicator(activeLink);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          indicator.style.transition = '';
+        });
+      });
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener('mouseenter', function () {
+        moveIndicator(link);
+      });
+    });
+
+    navLinks.addEventListener('mouseleave', function () {
+      if (activeLink) {
+        moveIndicator(activeLink);
+      } else {
+        indicator.classList.remove('nav__indicator--active');
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      var target = activeLink || links[0];
+      if (target) moveIndicator(target);
+    });
+  }
+
+  /* ------------------------------------------
      Navigation: mobile menu
   ------------------------------------------ */
   function initMobileMenu() {
-    const btn = document.querySelector('.nav__menu-btn');
-    const nav = document.getElementById('nav');
+    var btn = document.querySelector('.nav__menu-btn');
+    var nav = document.getElementById('nav');
     if (!btn || !nav) return;
 
     btn.addEventListener('click', function () {
-      const isOpen = nav.classList.toggle('nav--open');
+      var isOpen = nav.classList.toggle('nav--open');
       btn.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
@@ -150,7 +215,6 @@
         if (target) {
           target.scrollIntoView({ behavior: 'smooth' });
         }
-        // Close mobile menu if open
         var nav = document.getElementById('nav');
         if (nav) nav.classList.remove('nav--open');
         document.body.style.overflow = '';
@@ -168,7 +232,6 @@
 
     document.documentElement.setAttribute('data-theme', theme);
 
-    // Bind after a tick so injected nav is in DOM
     setTimeout(function () {
       document.querySelectorAll('.theme-toggle').forEach(function (btn) {
         btn.addEventListener('click', function (e) {
@@ -198,20 +261,6 @@
   /* ------------------------------------------
      Build an image element or placeholder
   ------------------------------------------ */
-  /* Check WebP support once */
-  var supportsWebP = false;
-  (function () {
-    var canvas = document.createElement('canvas');
-    if (canvas.getContext && canvas.getContext('2d')) {
-      supportsWebP = canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    }
-  })();
-
-  function toWebPSrc(src) {
-    if (!supportsWebP) return src;
-    return src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-  }
-
   function buildImage(src, alt, color, className) {
     var img = new Image();
     img.alt = alt || '';
@@ -223,12 +272,6 @@
     };
 
     img.onerror = function () {
-      // If WebP failed, try the original JPG
-      if (img.src !== src) {
-        img.src = src;
-        return;
-      }
-      // Replace with coloured placeholder
       var placeholder = document.createElement('div');
       placeholder.className = 'project-card__placeholder' + (className ? ' ' + className : '');
       placeholder.style.backgroundColor = color || 'var(--bg-alt)';
@@ -236,7 +279,7 @@
       img.replaceWith(placeholder);
     };
 
-    img.src = toWebPSrc(src);
+    img.src = src;
     return img;
   }
 
@@ -245,62 +288,29 @@
   ------------------------------------------ */
   function renderProjectCards(projects) {
     var grid = document.getElementById('project-grid');
-    var countEl = document.getElementById('project-count');
     if (!grid) return;
 
-    if (countEl) {
-      var len = projects.length;
-      countEl.textContent = '0' + len + ' Project' + (len !== 1 ? 's' : '');
-    }
-
-    projects.forEach(function (project, i) {
+    projects.forEach(function (project) {
       var card = document.createElement('a');
       card.href = 'project.html?slug=' + project.slug;
       card.className = 'project-card reveal';
 
-      var index = document.createElement('span');
-      index.className = 'project-card__index';
-      index.setAttribute('aria-hidden', 'true');
-      index.textContent = '0' + (i + 1);
-
       var imageWrap = document.createElement('div');
       imageWrap.className = 'project-card__image-wrap';
-
       var img = buildImage(project.thumbnail, project.title, project.color, 'project-card__image');
       imageWrap.appendChild(img);
 
-      var info = document.createElement('div');
-      info.className = 'project-card__info';
-      info.innerHTML =
-        '<span class="project-card__title">' + project.title + '</span>' +
-        '<span class="project-card__year">' + project.year + '</span>';
+      var title = document.createElement('span');
+      title.className = 'project-card__title';
+      title.textContent = project.title;
 
-      var subtitle = document.createElement('p');
-      subtitle.className = 'project-card__subtitle';
-      subtitle.textContent = project.subtitle;
-
-      var tags = document.createElement('div');
-      tags.className = 'project-card__tags';
-      project.tags.forEach(function (tag) {
-        var t = document.createElement('span');
-        t.className = 'project-card__tag';
-        t.textContent = tag;
-        tags.appendChild(t);
-      });
-
-      card.appendChild(index);
       card.appendChild(imageWrap);
-      card.appendChild(info);
-      card.appendChild(subtitle);
-      card.appendChild(tags);
+      card.appendChild(title);
 
       grid.appendChild(card);
     });
 
-    // Inject JSON-LD ItemList
     injectProjectsSchema(projects);
-
-    // Init scroll reveals after cards are in DOM
     initScrollReveal();
   }
 
@@ -328,20 +338,19 @@
       return;
     }
 
-    // Update page title
     document.title = project.title + ' — Lewis Clegg';
 
-    // Update meta description
     var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', project.description.split('\n')[0]);
     }
 
-    // Build page
+    var layout = project.layout || 'single';
     var html = '<div class="container">';
+
     html += '<a href="index.html#work" class="project-back">';
     html += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>';
-    html += 'Selected Work</a>';
+    html += 'Back to Work</a>';
 
     html += '<div class="project-header">';
     html += '<h1 class="project-header__title">' + project.title + '</h1>';
@@ -349,15 +358,7 @@
     html += '<span class="project-header__subtitle">' + project.subtitle + '</span>';
     html += '<span class="project-header__divider" aria-hidden="true">/</span>';
     html += '<span class="project-header__year">' + project.year + '</span>';
-    html += '</div>';
-    html += '<div class="project-header__tags">';
-    project.tags.forEach(function (tag) {
-      html += '<span class="project-card__tag">' + tag + '</span>';
-    });
     html += '</div></div>';
-
-    // Hero image
-    html += '<div class="project-hero-image reveal" id="project-hero-img"></div>';
 
     // Description
     var paragraphs = project.description.split('\n\n');
@@ -370,40 +371,38 @@
     html += '</div>';
 
     // Gallery
-    html += '<div class="project-gallery">';
+    html += '<div class="project-gallery project-gallery--' + layout + '">';
     project.images.forEach(function (imgSrc, imgIdx) {
-      if (imgIdx === 0) return; // skip hero dupe
       html += '<div class="project-gallery__item reveal" data-img-src="' + imgSrc + '" data-img-color="' + (project.color || '') + '" data-img-alt="' + project.title + ' — image ' + (imgIdx + 1) + '"></div>';
     });
     html += '</div>';
 
-    // Next project
+    // Prev / Next
+    var prevIdx = (idx - 1 + projects.length) % projects.length;
     var nextIdx = (idx + 1) % projects.length;
+    var prev = projects[prevIdx];
     var next = projects[nextIdx];
+
     html += '<div class="project-next">';
-    html += '<p class="project-next__label">Next Project</p>';
-    html += '<a href="project.html?slug=' + next.slug + '" class="project-next__link">';
+    html += '<a href="project.html?slug=' + prev.slug + '" class="project-next__link project-next__link--prev">';
+    html += '<p class="project-next__label">&larr; Previous</p>';
+    html += '<span class="project-next__title">' + prev.title + '</span>';
+    html += '</a>';
+    html += '<a href="project.html?slug=' + next.slug + '" class="project-next__link project-next__link--next">';
+    html += '<p class="project-next__label">Next &rarr;</p>';
     html += '<span class="project-next__title">' + next.title + '</span>';
-    html += '<p class="project-next__subtitle">' + next.subtitle + '</p>';
-    html += '</a></div>';
+    html += '</a>';
+    html += '</div>';
 
     html += '</div>';
     content.innerHTML = html;
-
-    // Insert hero image
-    var heroWrap = document.getElementById('project-hero-img');
-    if (heroWrap && project.images.length > 0) {
-      heroWrap.appendChild(buildImage(project.images[0], project.title, project.color));
-    }
 
     // Insert gallery images
     content.querySelectorAll('[data-img-src]').forEach(function (el) {
       el.appendChild(buildImage(el.dataset.imgSrc, el.dataset.imgAlt, el.dataset.imgColor));
     });
 
-    // Inject CreativeWork schema
     injectProjectSchema(project);
-
     initScrollReveal();
   }
 
@@ -429,7 +428,7 @@
               '@type': 'Person',
               'name': 'Lewis Clegg'
             },
-            'keywords': p.tags.join(', ')
+            'keywords': (p.tags || []).join(', ')
           }
         };
       })
@@ -455,6 +454,7 @@
         '@type': 'Person',
         'name': 'Lewis Clegg',
         'jobTitle': 'Graphic Designer',
+        'url': 'https://lewisclegg.co.uk',
         'address': {
           '@type': 'PostalAddress',
           'addressLocality': 'Halifax',
@@ -462,7 +462,7 @@
           'addressCountry': 'GB'
         }
       },
-      'keywords': project.tags.join(', ')
+      'keywords': (project.tags || []).join(', ')
     };
 
     var el = document.getElementById('project-schema');
@@ -506,7 +506,6 @@
     injectNav();
     injectFooter();
 
-    // Determine page type and load data if needed
     var projectGrid = document.getElementById('project-grid');
     var projectContent = document.getElementById('project-content');
 
@@ -516,12 +515,10 @@
         if (projectContent) renderProjectPage(projects);
       });
     } else {
-      // Static pages (about, etc.) — just init reveals
       initScrollReveal();
     }
   }
 
-  // Go
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

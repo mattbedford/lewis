@@ -1,0 +1,61 @@
+media:
+  input: images
+  output: /images
+
+content:
+  - name: projects
+    label: Projects
+    type: collection
+    path: content/projects
+    fields:
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        description: URL-friendly identifier (lowercase, hyphens only)
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: category
+        label: Category
+        type: string
+      - name: layout
+        label: Gallery Layout
+        type: select
+        options:
+          - label: Single Column
+            value: single
+          - label: Two Columns
+            value: grid-2
+          - label: Three Columns
+            value: grid-3
+        default: single
+      - name: featured
+        label: Featured
+        type: boolean
+        default: false
+      - name: thumbnail
+        label: Thumbnail
+        type: image
+      - name: color
+        label: Fallback Colour
+        type: string
+        description: Hex colour shown while images load
+      - name: description
+        label: Description
+        type: text
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: images
+        label: Gallery Images
+        type: image
+        list: true
