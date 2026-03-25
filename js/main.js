@@ -15,10 +15,17 @@
 
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
+    var skipTarget = 'work';
+    if (currentPage === 'project.html') skipTarget = 'project-content';
+    if (currentPage === 'about.html') skipTarget = 'about';
+
     header.innerHTML = '\
+      <a href="#' + skipTarget + '" class="skip-link">Skip to content</a>\
       <nav class="nav" id="nav">\
         <div class="nav__inner container">\
-          <a href="index.html" class="nav__logo" aria-label="Lewis Clegg — Home">Lewis Clegg</a>\
+          <a href="index.html" class="nav__logo" aria-label="Lewis Clegg — Home">\
+            <img src="images/logo.webp" alt="Lewis Clegg" class="nav__logo-img">\
+          </a>\
           <div class="nav__right">\
             <div class="nav__links">\
               <a href="index.html#work" class="nav__link' + (currentPage === 'index.html' || currentPage === '' ? ' nav__link--active' : '') + '">Work</a>\
@@ -338,12 +345,18 @@
       return;
     }
 
-    document.title = project.title + ' — Lewis Clegg';
+    document.title = (project.seo_title || project.title) + ' — Lewis Clegg';
 
     var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', project.description.split('\n')[0]);
+      metaDesc.setAttribute('content', project.seo_description || project.description.split('\n')[0]);
     }
+
+    // Open Graph
+    var ogTitle = document.querySelector('meta[property="og:title"]');
+    var ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogTitle) ogTitle.setAttribute('content', (project.seo_title || project.title) + ' — Lewis Clegg');
+    if (ogDesc) ogDesc.setAttribute('content', project.seo_description || project.description.split('\n\n')[0]);
 
     var layout = project.layout || 'single';
     var html = '<div class="container">';
@@ -460,7 +473,11 @@
           'addressLocality': 'Halifax',
           'addressRegion': 'West Yorkshire',
           'addressCountry': 'GB'
-        }
+        },
+        'sameAs': [
+          'https://www.instagram.com/clegglewis/',
+          'https://www.linkedin.com/in/lewis-clegg-5aa031200/'
+        ]
       },
       'keywords': (project.tags || []).join(', ')
     };
