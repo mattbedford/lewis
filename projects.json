@@ -1,5 +1,31 @@
 [
   {
+    "slug": "katie-and-tom",
+    "title": "Katie & Tom",
+    "subtitle": "Wedding Identity & Stationery",
+    "year": "2025",
+    "category": "Branding",
+    "layout": "grid-2",
+    "featured": false,
+    "tags": [
+      "Branding",
+      "Identity",
+      "Print"
+    ],
+    "thumbnail": "images/projects/katie-and-tom/welcome-sign.webp",
+    "color": "#d4886b",
+    "description": "For Katie and Tom's wedding, the brief was to blend two distinct passions: Tom's career in the horse racing industry and Katie's love for the 1960s and 70s. The result is a spirited, non-traditional identity that trades classic wedding tropes for a \"race-day\" aesthetic filtered through a Technicolor lens.\n\nThe typographic direction pays homage to the Beatles and the bold, expressive fonts of the late 60s, creating a fun and carefree atmosphere. This was paired with a clever \"Race Card\" seating plan, where guests were listed as runners on a scorecard and tables were named after iconic grounds — with York taking pride of place as the head table.\n\nIt's a project that proves bespoke stationery is at its best when it's deeply personal, playful, and a little bit rock and roll.",
+    "images": [
+      "images/projects/katie-and-tom/welcome-sign.webp",
+      "images/projects/katie-and-tom/welcome-sign-2.webp",
+      "images/projects/katie-and-tom/seating-plan.webp",
+      "images/projects/katie-and-tom/order-of-the-day.webp",
+      "images/projects/katie-and-tom/menu-place-setting.webp",
+      "images/projects/katie-and-tom/table-name-pontefract.webp",
+      "images/projects/katie-and-tom/table-name-newmarket.webp"
+    ]
+  },
+  {
     "slug": "josh-and-joel",
     "title": "Josh & Joel",
     "subtitle": "Wedding Identity & Stationery",
