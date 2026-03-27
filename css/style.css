@@ -199,6 +199,7 @@ h1, h2, h3, h4 {
 .nav__logo-img {
   height: 75px;
   width: 75px;
+  min-width: 75px;
   border-radius: 50%;
 }
 
@@ -584,7 +585,7 @@ h1, h2, h3, h4 {
 .project-gallery__item {
   width: 100%;
   overflow: hidden;
-  background-color: var(--bg-alt);
+  background-color: #fff;
 }
 
 .project-gallery__item img {

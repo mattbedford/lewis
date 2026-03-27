@@ -13,23 +13,25 @@
     var header = document.getElementById('site-header');
     if (!header) return;
 
-    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    var pathName = window.location.pathname;
+    var currentPage = pathName.split('/').pop() || 'index.html';
+    var isProjectPage = pathName.indexOf('/projects/') !== -1 || currentPage === 'project.html';
 
     var skipTarget = 'work';
-    if (currentPage === 'project.html') skipTarget = 'project-content';
+    if (isProjectPage) skipTarget = 'project-content';
     if (currentPage === 'about.html') skipTarget = 'about';
 
     header.innerHTML = '\
       <a href="#' + skipTarget + '" class="skip-link">Skip to content</a>\
       <nav class="nav" id="nav">\
         <div class="nav__inner container">\
-          <a href="index.html" class="nav__logo" aria-label="Lewis Clegg — Home">\
-            <img src="images/logo.webp" alt="Lewis Clegg" class="nav__logo-img">\
+          <a href="/" class="nav__logo" aria-label="Lewis Clegg — Home">\
+            <img src="/images/logo.webp" alt="Lewis Clegg" class="nav__logo-img">\
           </a>\
           <div class="nav__right">\
             <div class="nav__links">\
-              <a href="index.html#work" class="nav__link' + (currentPage === 'index.html' || currentPage === '' ? ' nav__link--active' : '') + '">Work</a>\
-              <a href="about.html" class="nav__link' + (currentPage === 'about.html' ? ' nav__link--active' : '') + '">About</a>\
+              <a href="/#work" class="nav__link' + (currentPage === 'index.html' || currentPage === '' ? ' nav__link--active' : '') + '">Work</a>\
+              <a href="/about.html" class="nav__link' + (currentPage === 'about.html' ? ' nav__link--active' : '') + '">About</a>\
               <a href="#contact" class="nav__link" data-contact>Contact</a>\
             </div>\
             <div class="nav__actions">\
@@ -66,8 +68,8 @@
           </div>\
         </div>\
         <div class="nav__mobile-menu">\
-          <a href="index.html#work" class="nav__link">Work</a>\
-          <a href="about.html" class="nav__link">About</a>\
+          <a href="/#work" class="nav__link">Work</a>\
+          <a href="/about.html" class="nav__link">About</a>\
           <a href="#contact" class="nav__link" data-contact>Contact</a>\
         </div>\
       </nav>';
@@ -106,8 +108,8 @@
           </a>\
         </div>\
         <div class="footer__nav">\
-          <a href="index.html#work">Work</a>\
-          <a href="about.html">About</a>\
+          <a href="/#work">Work</a>\
+          <a href="/about.html">About</a>\
           <a href="mailto:hello@lewisclegg.com">Contact</a>\
         </div>\
         <p class="footer__copyright">&copy; ' + new Date().getFullYear() + ' Lewis Clegg</p>\
@@ -268,15 +270,19 @@
   /* ------------------------------------------
      Build an image element or placeholder
   ------------------------------------------ */
-  function buildImage(src, alt, color, className) {
+  function buildImage(src, alt, color, className, eager) {
     var img = new Image();
     img.alt = alt || '';
-    img.loading = 'lazy';
-    img.className = (className || '') + ' img-reveal';
 
-    img.onload = function () {
-      img.classList.add('img-reveal--visible');
-    };
+    if (eager) {
+      img.className = className || '';
+    } else {
+      img.loading = 'lazy';
+      img.className = (className || '') + ' img-reveal';
+      img.onload = function () {
+        img.classList.add('img-reveal--visible');
+      };
+    }
 
     img.onerror = function () {
       var placeholder = document.createElement('div');
@@ -299,7 +305,7 @@
 
     projects.forEach(function (project) {
       var card = document.createElement('a');
-      card.href = 'project.html?slug=' + project.slug;
+      card.href = '/projects/' + project.slug + '/';
       card.className = 'project-card reveal';
 
       var imageWrap = document.createElement('div');
@@ -361,7 +367,7 @@
     var layout = project.layout || 'single';
     var html = '<div class="container">';
 
-    html += '<a href="index.html#work" class="project-back">';
+    html += '<a href="/#work" class="project-back">';
     html += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>';
     html += 'Back to Work</a>';
 
@@ -397,11 +403,11 @@
     var next = projects[nextIdx];
 
     html += '<div class="project-next">';
-    html += '<a href="project.html?slug=' + prev.slug + '" class="project-next__link project-next__link--prev">';
+    html += '<a href="/projects/' + prev.slug + '/" class="project-next__link project-next__link--prev">';
     html += '<p class="project-next__label">&larr; Previous</p>';
     html += '<span class="project-next__title">' + prev.title + '</span>';
     html += '</a>';
-    html += '<a href="project.html?slug=' + next.slug + '" class="project-next__link project-next__link--next">';
+    html += '<a href="/projects/' + next.slug + '/" class="project-next__link project-next__link--next">';
     html += '<p class="project-next__label">Next &rarr;</p>';
     html += '<span class="project-next__title">' + next.title + '</span>';
     html += '</a>';
@@ -412,7 +418,7 @@
 
     // Insert gallery images
     content.querySelectorAll('[data-img-src]').forEach(function (el) {
-      el.appendChild(buildImage(el.dataset.imgSrc, el.dataset.imgAlt, el.dataset.imgColor));
+      el.appendChild(buildImage(el.dataset.imgSrc, el.dataset.imgAlt, el.dataset.imgColor, '', true));
     });
 
     injectProjectSchema(project);
@@ -525,8 +531,12 @@
 
     var projectGrid = document.getElementById('project-grid');
     var projectContent = document.getElementById('project-content');
+    var isPreRendered = projectContent && projectContent.children.length > 0;
 
-    if (projectGrid || projectContent) {
+    if (isPreRendered) {
+      // Static project page — content is already in the HTML
+      initScrollReveal();
+    } else if (projectGrid || projectContent) {
       loadProjects().then(function (projects) {
         if (projectGrid) renderProjectCards(projects);
         if (projectContent) renderProjectPage(projects);
