@@ -223,10 +223,6 @@
       });
     });
 
-    footerNav.addEventListener('mouseleave', function () {
-      indicator.style.opacity = '0';
-    });
-
     window.addEventListener('resize', function () {
       if (links[0]) moveIndicator(links[0]);
     });
