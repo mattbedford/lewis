@@ -106,13 +106,20 @@
               <circle cx="4" cy="4" r="2"/>\
             </svg>\
           </a>\
+          <a href="mailto:hello@lewisclegg.co.uk" aria-label="Email">\
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">\
+              <rect x="2" y="4" width="20" height="16" rx="2"/>\
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>\
+            </svg>\
+          </a>\
         </div>\
         <div class="footer__nav">\
           <a href="/#work">Work</a>\
           <a href="/about.html">About</a>\
-          <a href="mailto:hello@lewisclegg.com">Contact</a>\
+          <a href="mailto:hello@lewisclegg.co.uk">Contact</a>\
         </div>\
         <p class="footer__copyright">&copy; ' + new Date().getFullYear() + ' Lewis Clegg</p>\
+        <p class="footer__cookies">Cookies? No thanks. This site doesn\u2019t use any.</p>\
       </div>';
   }
 
@@ -187,6 +194,41 @@
     window.addEventListener('resize', function () {
       var target = activeLink || links[0];
       if (target) moveIndicator(target);
+    });
+  }
+
+  /* ------------------------------------------
+     Footer: sliding indicator
+  ------------------------------------------ */
+  function initFooterIndicator() {
+    var footerNav = document.querySelector('.footer__nav');
+    if (!footerNav) return;
+
+    var indicator = document.createElement('span');
+    indicator.className = 'footer__indicator';
+    footerNav.appendChild(indicator);
+
+    var links = footerNav.querySelectorAll('a');
+
+    function moveIndicator(el) {
+      var rect = el.getBoundingClientRect();
+      var parentRect = footerNav.getBoundingClientRect();
+      indicator.style.left = (rect.left - parentRect.left) + 'px';
+      indicator.style.width = rect.width + 'px';
+    }
+
+    links.forEach(function (link) {
+      link.addEventListener('mouseenter', function () {
+        moveIndicator(link);
+      });
+    });
+
+    footerNav.addEventListener('mouseleave', function () {
+      indicator.style.opacity = '0';
+    });
+
+    window.addEventListener('resize', function () {
+      if (links[0]) moveIndicator(links[0]);
     });
   }
 
@@ -528,6 +570,7 @@
     initTheme();
     injectNav();
     injectFooter();
+    initFooterIndicator();
 
     var projectGrid = document.getElementById('project-grid');
     var projectContent = document.getElementById('project-content');
