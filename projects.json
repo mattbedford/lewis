@@ -130,17 +130,5 @@
       "/images/projects/st-peters-consort/christmas-poster.webp",
       "/images/projects/st-peters-consort/requiem-poster.webp"
     ]
-  },
-  {
-    "slug": "mattbedford",
-    "title": "test",
-    "subtitle": "test",
-    "year": "1990",
-    "category": "TEST",
-    "layout": "single",
-    "featured": false,
-    "thumbnail": "/images/Lewis-Clegg-Graphic-Designer.webp",
-    "color": "#fff",
-    "description": "testing. sorry"
   }
 ]
