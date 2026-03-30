@@ -2,21 +2,25 @@
   "slug": "mamil",
   "title": "MAMIL",
   "subtitle": "Branding & Menu Design",
-  "year": "2021",
+  "year": "2021-2025",
   "category": "Branding",
   "layout": "single",
   "featured": false,
-  "tags": ["Branding", "Identity", "Print"],
-  "thumbnail": "images/projects/mamil/mamil-mockup.webp",
+  "thumbnail": "/images/projects/mamil/mamil-mockup.webp",
   "color": "#2d4a3e",
   "description": "Branding, experiential and menu design for a small chain of cycling cafes.\n\nApproached in 2021 by Dave, a keen cyclist with a long history in the catering industry, the brief was to create a brand identity for a cafe with a cycling theme. Cycling culture is notoriously stylish and steeped in the history of famous European races — the cafe needed to reflect this while maintaining a touch of humour and self-awareness.\n\nWorking closely with the client, the brand played off the often derogatory term for cyclists: the Middle Aged Man in Lycra, or MAMIL. The logomark references the cycling connection subtly, without being exclusive to cyclists.\n\nThe menus introduced secondary fonts and colours to avoid an overly oppressive, monotone look. Wall murals utilising the handlebars motif mingled with framed jerseys and homages to icons of cycling to give each cafe a real 'clubhouse' vibe.\n\nMamil went on to open a further two bars, all following this same visual identity — helping them achieve success and brand recognition across Calderdale.",
+  "tags": [
+    "Branding",
+    "Identity",
+    "Print"
+  ],
   "images": [
-    "images/projects/mamil/mamil-mockup.webp",
-    "images/projects/mamil/mamil-menu.webp",
-    "images/projects/mamil/mamil-drink-menu.webp",
-    "images/projects/mamil/mamil-cup.webp",
-    "images/projects/mamil/mamil-opening.webp",
-    "images/projects/mamil/mamil-drinks.webp",
-    "images/projects/mamil/mamil-bars.webp"
+    "/images/projects/mamil/mamil-mockup.webp",
+    "/images/projects/mamil/mamil-menu.webp",
+    "/images/projects/mamil/mamil-drink-menu.webp",
+    "/images/projects/mamil/mamil-cup.webp",
+    "/images/projects/mamil/mamil-opening.webp",
+    "/images/projects/mamil/mamil-drinks.webp",
+    "/images/projects/mamil/mamil-bars.webp"
   ]
 }
