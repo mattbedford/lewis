@@ -2,22 +2,26 @@
   "slug": "josh-and-joel",
   "title": "Josh & Joel",
   "subtitle": "Wedding Identity & Stationery",
-  "year": "2024",
+  "year": "2025",
   "category": "Branding",
   "layout": "grid-2",
   "featured": false,
-  "tags": ["Branding", "Print", "Identity"],
-  "thumbnail": "images/projects/mixed-work/josh-joel-invite.webp",
+  "thumbnail": "/images/projects/mixed-work/josh-joel-invite.webp",
   "color": "#3a3a3a",
-  "description": "When Josh and Joel approached me for their wedding at East Riddlesden Hall, they were clear: they wanted to eschew the traditional scripts and delicate flourishes of standard stationery in favour of something bold, playful, and reflective of their lifestyle.\n\nThe resulting identity puts typography centre stage. I began by creating a custom \u201clogo\u201d of their names, designed to be adapted across various formats and textures. For the stationery itself, I developed a kinetic typographic system where the letterforms create dynamic shapes that support the information. To ground the project in its location, I created an adaptable graphic language inspired by the architectural features of the venue, used for both iconography and on-site wayfinding. Integrated with a hand-illustrated \u201ctwo stags\u201d motif by the groom, Joel, the final suite was a tactile, high-impact celebration uniquely tailored to them.",
+  "description": "When Josh and Joel approached me for their wedding at East Riddlesden Hall, they were clear that they wanted to eschew the traditional scripts and delicate flourishes of standard stationery in favour of something bold, playful, and reflective of their lifestyle.\n\nThe resulting identity puts typography centre stage. I began by creating a custom “logo” of their names, designed to be adapted across various formats and textures. For the stationery itself, I developed a kinetic typographic system where the letterforms create dynamic shapes that support the information. To ground the project in its location, I created an adaptable graphic language inspired by the architectural features of the venue, used for both iconography and on-site wayfinding. Integrated with a hand-illustrated “two stags” motif by the groom, Joel, the final suite was a tactile, high-impact celebration uniquely tailored to them.",
+  "tags": [
+    "Branding",
+    "Print",
+    "Identity"
+  ],
   "images": [
-    "images/projects/mixed-work/josh-joel-invite.webp",
-    "images/projects/mixed-work/print-work-01.webp",
-    "images/projects/mixed-work/print-work-02.webp",
-    "images/projects/mixed-work/print-work-03.webp",
-    "images/projects/mixed-work/print-work-04.webp",
-    "images/projects/mixed-work/digital-work-01.webp",
-    "images/projects/mixed-work/digital-work-02.webp",
-    "images/projects/mixed-work/digital-work-03.webp"
+    "/images/projects/mixed-work/josh-joel-invite.webp",
+    "/images/projects/mixed-work/print-work-01.webp",
+    "/images/projects/mixed-work/print-work-02.webp",
+    "/images/projects/mixed-work/print-work-03.webp",
+    "/images/projects/mixed-work/print-work-04.webp",
+    "/images/projects/mixed-work/digital-work-01.webp",
+    "/images/projects/mixed-work/digital-work-02.webp",
+    "/images/projects/mixed-work/digital-work-03.webp"
   ]
 }
