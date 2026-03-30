@@ -27,6 +27,36 @@
     ]
   },
   {
+    "slug": "Imps-Review",
+    "title": "Imps Review Magazine",
+    "subtitle": "Editorial Design & Publishing",
+    "year": "2022-2026",
+    "category": "Editorial",
+    "layout": "single",
+    "featured": false,
+    "thumbnail": "/images/projects/wheelers-review/cover.webp",
+    "color": "#8a8580",
+    "description": "Self-initiated annual magazine documenting the soul of a cycling club.\n\nInspired by the tactile beauty of high-end independent journals, this annual magazine launched in 2022 to document the Halifax Imperial Wheelers cycling club. Spanning 90–140 pages, these publications serve as a premium archive of the club’s journey, featuring long-form ride reports, curated photography, and deep dives into local cycling history.\n\nBuilt on a rigorous modular grid, the compact A5 format provides a creative challenge: balancing dense content with impactful visual storytelling. By playing with scale and intentional white space, the layouts feel expansive and breathable despite the small scale.\n\nAs the sole editor and designer, the full production pipeline is managed end-to-end — handling everything from photography and interviews to ad sales and print management.",
+    "tags": [
+      "Editorial",
+      "Print",
+      "Photography"
+    ],
+    "images": [
+      "/images/projects/wheelers-review/cover.webp",
+      "/images/projects/wheelers-review/contents.webp",
+      "/images/projects/wheelers-review/spread-01.webp",
+      "/images/projects/wheelers-review/spread-02.webp",
+      "/images/projects/wheelers-review/spread-03.webp",
+      "/images/projects/wheelers-review/spread-04.webp",
+      "/images/projects/wheelers-review/spread-05.webp",
+      "/images/projects/wheelers-review/spread-06.webp",
+      "/images/projects/wheelers-review/spread-07.webp",
+      "/images/projects/wheelers-review/spread-08.webp",
+      "/images/projects/wheelers-review/booklet.webp"
+    ]
+  },
+  {
     "slug": "kate-and-tom",
     "title": "Kate & Tom",
     "subtitle": "Wedding Identity & Stationery",
@@ -49,36 +79,6 @@
       "/images/projects/katie-and-tom/seating-plan.webp",
       "/images/projects/katie-and-tom/menu-place-setting.webp",
       "/images/projects/katie-and-tom/table-name-pontefract.webp"
-    ]
-  },
-  {
-    "slug": "wheelers-review",
-    "title": "Wheelers Review",
-    "subtitle": "Editorial Design & Publishing",
-    "year": "2022",
-    "category": "Editorial",
-    "layout": "single",
-    "featured": false,
-    "tags": [
-      "Editorial",
-      "Print",
-      "Photography"
-    ],
-    "thumbnail": "images/projects/wheelers-review/cover.webp",
-    "color": "#8a8580",
-    "description": "Self-initiated annual magazine documenting the soul of a cycling club.\n\nInspired by the tactile beauty of high-end independent journals, this annual magazine launched in 2022 to document the Halifax Imperial Wheelers cycling club. Spanning 90–140 pages, these publications serve as a premium archive of the club’s journey, featuring long-form ride reports, curated photography, and deep dives into local cycling history.\n\nBuilt on a rigorous modular grid, the compact A5 format provides a creative challenge: balancing dense content with impactful visual storytelling. By playing with scale and intentional white space, the layouts feel expansive and breathable despite the small scale.\n\nAs the sole editor and designer, the full production pipeline is managed end-to-end — handling everything from photography and interviews to ad sales and print management.",
-    "images": [
-      "images/projects/wheelers-review/cover.webp",
-      "images/projects/wheelers-review/contents.webp",
-      "images/projects/wheelers-review/spread-01.webp",
-      "images/projects/wheelers-review/spread-02.webp",
-      "images/projects/wheelers-review/spread-03.webp",
-      "images/projects/wheelers-review/spread-04.webp",
-      "images/projects/wheelers-review/spread-05.webp",
-      "images/projects/wheelers-review/spread-06.webp",
-      "images/projects/wheelers-review/spread-07.webp",
-      "images/projects/wheelers-review/spread-08.webp",
-      "images/projects/wheelers-review/booklet.webp"
     ]
   },
   {
