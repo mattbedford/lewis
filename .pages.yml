@@ -7,7 +7,7 @@ content:
     label: Projects
     format: json
     extension: json
-    filename: '{fields.slug}'
+    filename: '{fields.slug}.json'
     type: collection
     path: content/projects
     fields:
