@@ -32,12 +32,13 @@ content:
         label: Gallery Layout
         type: select
         options:
-          - label: Single Column
-            value: single
-          - label: Two Columns
-            value: grid-2
-          - label: Three Columns
-            value: grid-3
+          values:
+            - label: Single Column
+              value: single
+            - label: Two Columns
+              value: grid-2
+            - label: Three Columns
+              value: grid-3
         default: single
       - name: featured
         label: Featured
