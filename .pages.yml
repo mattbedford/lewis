@@ -6,6 +6,7 @@ content:
   - name: projects
     label: Projects
     format: json
+    extension: json
     type: collection
     path: content/projects
     fields:
