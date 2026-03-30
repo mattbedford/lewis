@@ -5,6 +5,7 @@ media:
 content:
   - name: projects
     label: Projects
+    format: json
     type: collection
     path: content/projects
     fields:
