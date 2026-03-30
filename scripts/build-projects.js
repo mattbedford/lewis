@@ -80,7 +80,7 @@ function buildProjectHtml(project, idx) {
   (project.images || []).forEach(function (imgSrc, imgIdx) {
     var alt = escapeHtml(project.title + ' \u2014 image ' + (imgIdx + 1));
     galleryHtml += '      <div class="project-gallery__item reveal">\n';
-    galleryHtml += '        <img src="/' + imgSrc + '" alt="' + alt + '">\n';
+    galleryHtml += '        <img src="/' + imgSrc.replace(/^\//, '') + '" alt="' + alt + '">\n';
     galleryHtml += '      </div>\n';
   });
 
