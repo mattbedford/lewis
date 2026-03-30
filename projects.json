@@ -27,6 +27,23 @@
     ]
   },
   {
+    "slug": "hannah-collins",
+    "title": "Hannah Collins Garden Design",
+    "subtitle": "Identity, Web Design, Stationery",
+    "year": "2023",
+    "category": "Identity",
+    "layout": "single",
+    "featured": false,
+    "thumbnail": "images/projects/Hannah Collins/Hannah Collins Flowers.webp",
+    "description": "Hannah Collins produces stunning, bespoke contemporary gardens, yet her previous branding failed to reflect the premium, structural nature of her work. She required a visual identity that could match the calibre of her designs and elevate her presence in a competitive market.\n\nThe resulting identity is built on a flexible, typographic system that mirrors the landscape itself. By stacking the name and introducing a clean vertical \"slice,\" the logo evokes the disciplined lines of garden borders, trellises, and pagodas. The words \"Garden Design\" are set in an elegant italic, placed along the \"path\" created by the negative space—representing the contrast between a garden's rigid architectural bones and the organic, flowing forms of its planting. The logoform is inherently adaptable; it can expand or contract to frame photography, physically interacting with images of her work to emphasise the relationship between the designer and the land.",
+    "images": [
+      "images/projects/Hannah Collins/Hannah Collins Logo Full Colour.webp",
+      "images/projects/Hannah Collins/Hannah Collins Flowers.webp",
+      "images/projects/Hannah Collins/HANNAH COLLINS 2026.webp",
+      "images/projects/Hannah Collins/Hannah Collins Business Card.webp"
+    ]
+  },
+  {
     "slug": "Imps-Review",
     "title": "Imps Review Magazine",
     "subtitle": "Editorial Design & Publishing",
