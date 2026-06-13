@@ -45,5 +45,6 @@ Save your changes in Pages CMS and the site will update automatically within a m
 - **Hosting:** Cloudflare Pages
 - **Content:** JSON files in `content/projects/`
 - **Images:** `images/` folder
-- **Build step:** `.github/workflows/aggregate-projects.yml` runs `scripts/build-projects.js` on push to `main`, generating `projects.json`, individual project pages, and `sitemap.xml`
+- **Build step:** `.github/workflows/aggregate-projects.yml` runs `scripts/build-projects.js` on push to `main` (when `content/projects/**` or `scripts/**` change), generating `projects.json`, individual project pages, and `sitemap.xml`. Run it locally with `node scripts/build-projects.js`.
+- **Identity graph (SEO):** Lewis, the website, and the practice are defined **once** in `scripts/identity-graph.js` (the canonical `#lewis` / `#website` / `#practice` nodes). The build injects that block, byte-identical, into every page — into the `<!-- identity-graph:start ... end -->` region of `index.html`, `about.html`, and `project.html`, and into each generated project page. Everywhere else (project schema, homepage list) references `#lewis` by id rather than re-describing him. **Do not hand-edit the marked regions** — they are overwritten on every build. To change Lewis's details, edit `scripts/identity-graph.js` and rebuild.
 - **CMS config:** `.pages.yml`

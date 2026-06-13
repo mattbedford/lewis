@@ -481,10 +481,9 @@
             'name': p.title,
             'description': p.description.split('\n\n')[0],
             'dateCreated': p.year,
-            'creator': {
-              '@type': 'Person',
-              'name': 'Lewis Clegg'
-            },
+            // Bare pointer to the canonical #lewis node (see scripts/identity-graph.js).
+            // Must match that @id byte for byte; never an inline Person.
+            'creator': { '@id': 'https://lewisclegg.co.uk/#lewis' },
             'keywords': (p.tags || []).join(', ')
           }
         };
@@ -507,22 +506,9 @@
       'name': project.title,
       'description': project.description.split('\n\n')[0],
       'dateCreated': project.year,
-      'creator': {
-        '@type': 'Person',
-        'name': 'Lewis Clegg',
-        'jobTitle': 'Graphic Designer',
-        'url': 'https://lewisclegg.co.uk',
-        'address': {
-          '@type': 'PostalAddress',
-          'addressLocality': 'Halifax',
-          'addressRegion': 'West Yorkshire',
-          'addressCountry': 'GB'
-        },
-        'sameAs': [
-          'https://www.instagram.com/clegglewis/',
-          'https://www.linkedin.com/in/lewis-clegg-5aa031200/'
-        ]
-      },
+      // Bare pointer to the canonical #lewis node (see scripts/identity-graph.js).
+      // Must match that @id byte for byte; never an inline Person.
+      'creator': { '@id': 'https://lewisclegg.co.uk/#lewis' },
       'keywords': (project.tags || []).join(', ')
     };
 

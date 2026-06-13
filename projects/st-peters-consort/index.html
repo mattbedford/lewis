@@ -19,7 +19,101 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css">
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD: identity graph (shared, byte-identical site-wide; source: scripts/identity-graph.js) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://lewisclegg.co.uk/#lewis",
+        "name": "Lewis Clegg",
+        "givenName": "Lewis",
+        "additionalName": "James",
+        "familyName": "Clegg",
+        "alternateName": "Lewis James Clegg",
+        "url": "https://lewisclegg.co.uk/",
+        "image": "https://lewisclegg.co.uk/images/Lewis-Clegg-Graphic-Designer.webp",
+        "jobTitle": "Graphic and web designer",
+        "email": "hello@lewisclegg.co.uk",
+        "description": "A graphic designer based in Halifax, West Yorkshire, with expertise in branding, editorial design, and print. Experienced in creating cohesive brand identities, publication design, and visual systems for clients across the region.",
+        "knowsAbout": [
+          "Graphic Design",
+          "Web Design",
+          "Branding",
+          "Editorial Design",
+          "Print Design",
+          "Identity Design",
+          "Menu Design",
+          "Poster Design"
+        ],
+        "worksFor": {
+          "@type": "Role",
+          "roleName": "Director",
+          "worksFor": {
+            "@type": "Organization",
+            "@id": "https://hebblestone.org/#hebblestone",
+            "name": "Hebble & Stone CIC",
+            "url": "https://hebblestone.org/"
+          }
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/lewis-clegg-5aa031200/",
+          "https://www.instagram.com/clegglewis/",
+          "https://find-and-update.company-information.service.gov.uk/officers/6nNGACAHaBYfHbT3m67OsogczMw/appointments"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lewisclegg.co.uk/#website",
+        "url": "https://lewisclegg.co.uk/",
+        "name": "Lewis Clegg",
+        "publisher": {
+          "@id": "https://lewisclegg.co.uk/#lewis"
+        },
+        "inLanguage": "en-GB"
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://lewisclegg.co.uk/#practice",
+        "name": "Lewis Clegg, Graphic and Web Design",
+        "url": "https://lewisclegg.co.uk/",
+        "description": "Graphic and web design practice based in Halifax, West Yorkshire, specialising in branding, editorial design, web design, and print.",
+        "founder": {
+          "@id": "https://lewisclegg.co.uk/#lewis"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Halifax",
+          "addressRegion": "West Yorkshire",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 53.7248,
+          "longitude": -1.8596
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "West Yorkshire"
+        },
+        "priceRange": "$$",
+        "knowsAbout": [
+          "Graphic Design",
+          "Web Design",
+          "Branding",
+          "Editorial Design",
+          "Print Design",
+          "Identity Design",
+          "Menu Design",
+          "Poster Design"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: this project -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -28,20 +122,7 @@
     "description": "Identity, poster design and social media for an established choir.",
     "dateCreated": "2018-2026",
     "creator": {
-      "@type": "Person",
-      "name": "Lewis Clegg",
-      "jobTitle": "Graphic Designer",
-      "url": "https://lewisclegg.co.uk",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Halifax",
-        "addressRegion": "West Yorkshire",
-        "addressCountry": "GB"
-      },
-      "sameAs": [
-        "https://www.instagram.com/clegglewis/",
-        "https://www.linkedin.com/in/lewis-clegg-5aa031200/"
-      ]
+      "@id": "https://lewisclegg.co.uk/#lewis"
     },
     "keywords": "Identity, Print, Poster Design"
   }

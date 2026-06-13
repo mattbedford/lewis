@@ -13,13 +13,19 @@
 
 var fs = require('fs');
 var path = require('path');
+var identity = require('./identity-graph');
 
 var ROOT = path.resolve(__dirname, '..');
 var CONTENT_DIR = path.join(ROOT, 'content', 'projects');
 var PROJECTS_DIR = path.join(ROOT, 'projects');
 var OUT_JSON = path.join(ROOT, 'projects.json');
 var OUT_SITEMAP = path.join(ROOT, 'sitemap.xml');
-var SITE_URL = 'https://lewisclegg.co.uk';
+var SITE_URL = identity.SITE_URL;
+var LEWIS_ID = identity.LEWIS_ID;
+var IDENTITY_SCRIPT = identity.IDENTITY_SCRIPT;
+
+// Static pages whose <head> carries a build-owned identity-graph region.
+var STATIC_PAGES = ['index.html', 'about.html', 'project.html'];
 
 // ---------------------------------------------------------------------------
 // 1. Aggregate project JSON
@@ -84,29 +90,15 @@ function buildProjectHtml(project, idx) {
     galleryHtml += '      </div>\n';
   });
 
-  // JSON-LD
+  // JSON-LD. The creator is a bare pointer to the canonical #lewis node
+  // (defined once in the identity graph below); never an inline Person.
   var schema = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
     'name': project.title,
     'description': firstParagraph,
     'dateCreated': project.year,
-    'creator': {
-      '@type': 'Person',
-      'name': 'Lewis Clegg',
-      'jobTitle': 'Graphic Designer',
-      'url': SITE_URL,
-      'address': {
-        '@type': 'PostalAddress',
-        'addressLocality': 'Halifax',
-        'addressRegion': 'West Yorkshire',
-        'addressCountry': 'GB'
-      },
-      'sameAs': [
-        'https://www.instagram.com/clegglewis/',
-        'https://www.linkedin.com/in/lewis-clegg-5aa031200/'
-      ]
-    },
+    'creator': { '@id': LEWIS_ID },
     'keywords': (project.tags || []).join(', ')
   };
 
@@ -131,7 +123,10 @@ function buildProjectHtml(project, idx) {
   <!-- Styles -->\n\
   <link rel="stylesheet" href="/css/style.css">\n\
 \n\
-  <!-- JSON-LD -->\n\
+  <!-- JSON-LD: identity graph (shared, byte-identical site-wide; source: scripts/identity-graph.js) -->\n\
+' + IDENTITY_SCRIPT + '\n\
+\n\
+  <!-- JSON-LD: this project -->\n\
   <script type="application/ld+json">\n\
   ' + JSON.stringify(schema, null, 2).split('\n').join('\n  ') + '\n\
   </script>\n\
@@ -194,8 +189,60 @@ projects.forEach(function (project, idx) {
   console.log('  Generated projects/' + project.slug + '/index.html');
 });
 
+// Prune orphaned page directories: any projects/<dir> whose slug no longer
+// exists in content/. Scoped strictly to PROJECTS_DIR (the build's own output);
+// it never reads or touches images/, which keep their original names even after
+// a slug is renamed. This stops stale, un-stitched pages lingering on disk.
+var currentSlugs = {};
+projects.forEach(function (project) {
+  currentSlugs[project.slug] = true;
+});
+
+fs.readdirSync(PROJECTS_DIR).forEach(function (entry) {
+  var entryPath = path.join(PROJECTS_DIR, entry);
+  if (!fs.statSync(entryPath).isDirectory()) return;
+  if (currentSlugs[entry]) return;
+  fs.rmSync(entryPath, { recursive: true, force: true });
+  console.log('  Pruned orphaned page projects/' + entry + ' (no matching slug in content/)');
+});
+
 // ---------------------------------------------------------------------------
-// 3. Generate sitemap.xml
+// 3. Inject the identity graph into the build-owned region of static pages
+// ---------------------------------------------------------------------------
+//
+// The region is delimited by:
+//   <!-- identity-graph:start ... -->  ...  <!-- identity-graph:end -->
+// We replace whatever sits between the markers. This is idempotent: re-running
+// always yields exactly one identity <script>, never an accumulated stack. If
+// the markers are missing we warn and skip rather than blindly append.
+
+function injectIdentityGraph(fileName) {
+  var filePath = path.join(ROOT, fileName);
+  var html = fs.readFileSync(filePath, 'utf8');
+
+  var startTag = '<!-- identity-graph:start';
+  var endTag = '<!-- identity-graph:end -->';
+  var startIdx = html.indexOf(startTag);
+  var endIdx = html.indexOf(endTag);
+
+  if (startIdx === -1 || endIdx === -1) {
+    console.warn('  Skipped ' + fileName + ': identity-graph markers not found');
+    return;
+  }
+
+  var startCommentEnd = html.indexOf('-->', startIdx) + 3;
+  var before = html.slice(0, startCommentEnd);
+  var after = html.slice(endIdx);
+  var region = '\n' + IDENTITY_SCRIPT + '\n  ';
+
+  fs.writeFileSync(filePath, before + region + after);
+  console.log('  Injected identity graph into ' + fileName);
+}
+
+STATIC_PAGES.forEach(injectIdentityGraph);
+
+// ---------------------------------------------------------------------------
+// 4. Generate sitemap.xml
 // ---------------------------------------------------------------------------
 
 var sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
