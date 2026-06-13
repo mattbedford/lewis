@@ -361,7 +361,6 @@
       grid.appendChild(card);
     });
 
-    injectProjectsSchema(projects);
     initScrollReveal();
   }
 
@@ -465,36 +464,10 @@
 
   /* ------------------------------------------
      JSON-LD: ItemList for homepage
-  ------------------------------------------ */
-  function injectProjectsSchema(projects) {
-    var schema = {
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      'name': 'Selected Work by Lewis Clegg',
-      'numberOfItems': projects.length,
-      'itemListElement': projects.map(function (p, i) {
-        return {
-          '@type': 'ListItem',
-          'position': i + 1,
-          'item': {
-            '@type': 'CreativeWork',
-            'name': p.title,
-            'description': p.description.split('\n\n')[0],
-            'dateCreated': p.year,
-            // Bare pointer to the canonical #lewis node (see scripts/identity-graph.js).
-            // Must match that @id byte for byte; never an inline Person.
-            'creator': { '@id': 'https://lewisclegg.co.uk/#lewis' },
-            'keywords': (p.tags || []).join(', ')
-          }
-        };
-      })
-    };
 
-    var el = document.getElementById('projects-schema');
-    if (el) {
-      el.textContent = JSON.stringify(schema);
-    }
-  }
+     Baked into index.html's #projects-schema at build time
+     (scripts/build-projects.js) so no-JS crawlers see it. No runtime injection.
+  ------------------------------------------ */
 
   /* ------------------------------------------
      JSON-LD: CreativeWork for project page

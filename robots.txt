@@ -1,0 +1,5 @@
+# https://lewisclegg.co.uk/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://lewisclegg.co.uk/sitemap.xml

@@ -74,6 +74,12 @@ function buildProjectHtml(project, idx) {
   var firstParagraph = (project.description || '').split('\n\n')[0];
   var metaDesc = escapeHtml(project.seo_description || firstParagraph);
 
+  // og:image is the project's own cover (its thumbnail) as an absolute, encoded
+  // URL. encodeURI keeps the slashes but turns spaces into %20 so scrapers fetch
+  // it reliably. Falls back to the generic brand card if a project has no thumbnail.
+  var thumb = (project.thumbnail || '').replace(/^\//, '');
+  var ogImage = thumb ? escapeHtml(SITE_URL + '/' + encodeURI(thumb)) : identity.OG_IMAGE;
+
   // Description paragraphs
   var descHtml = '';
   (project.description || '').split('\n\n').forEach(function (p) {
@@ -113,7 +119,7 @@ function buildProjectHtml(project, idx) {
   <meta property="og:description" content="' + escapeHtml(firstParagraph) + '">\n\
   <meta property="og:url" content="' + SITE_URL + '/projects/' + project.slug + '/">\n\
   <meta property="og:type" content="article">\n\
-  <meta property="og:image" content="' + identity.OG_IMAGE + '">\n\
+  <meta property="og:image" content="' + ogImage + '">\n\
   <meta name="twitter:card" content="summary_large_image">\n\
 \n\
   <!-- Fonts -->\n\
@@ -241,6 +247,55 @@ function injectIdentityGraph(fileName) {
 }
 
 STATIC_PAGES.forEach(injectIdentityGraph);
+
+// ---------------------------------------------------------------------------
+// 3b. Bake the homepage ItemList into index.html's #projects-schema element
+// ---------------------------------------------------------------------------
+//
+// Previously this was injected at runtime by main.js, so no-JS crawlers never
+// saw it. We now write it at build time from the same projects array. Each
+// item's creator is a bare pointer to the canonical #lewis node. The runtime
+// injector has been removed from main.js so this can't be double-written.
+
+function populateProjectsList() {
+  var filePath = path.join(ROOT, 'index.html');
+  var html = fs.readFileSync(filePath, 'utf8');
+
+  var schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': 'Selected Work by Lewis Clegg',
+    'numberOfItems': projects.length,
+    'itemListElement': projects.map(function (p, i) {
+      return {
+        '@type': 'ListItem',
+        'position': i + 1,
+        'item': {
+          '@type': 'CreativeWork',
+          'name': p.title,
+          'description': (p.description || '').split('\n\n')[0],
+          'dateCreated': p.year,
+          'creator': { '@id': LEWIS_ID },
+          'keywords': (p.tags || []).join(', ')
+        }
+      };
+    })
+  };
+
+  var inner = JSON.stringify(schema, null, 2).split('\n').join('\n  ');
+  var replacement = '<script type="application/ld+json" id="projects-schema">\n  ' + inner + '\n  </script>';
+  var re = /<script type="application\/ld\+json" id="projects-schema">[\s\S]*?<\/script>/;
+
+  if (!re.test(html)) {
+    console.warn('  Skipped index.html: #projects-schema element not found');
+    return;
+  }
+
+  fs.writeFileSync(filePath, html.replace(re, replacement));
+  console.log('  Populated #projects-schema in index.html (' + projects.length + ' items)');
+}
+
+populateProjectsList();
 
 // ---------------------------------------------------------------------------
 // 4. Generate sitemap.xml
