@@ -23,6 +23,11 @@ var LEWIS_ID = SITE_URL + '/#lewis';
 var WEBSITE_ID = SITE_URL + '/#website';
 var PRACTICE_ID = SITE_URL + '/#practice';
 
+// Default social-share card for the brand/practice (the "org"). Kept as JPEG on
+// purpose: og:image is read by external crawlers where JPEG/PNG render reliably,
+// unlike webp. Person.image (the profile photo) stays webp.
+var OG_IMAGE = SITE_URL + '/images/og-cover.jpg';
+
 var IDENTITY_GRAPH = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -69,6 +74,7 @@ var IDENTITY_GRAPH = {
       '@id': PRACTICE_ID,
       'name': 'Lewis Clegg, Graphic and Web Design',
       'url': 'https://lewisclegg.co.uk/',
+      'image': OG_IMAGE,
       'description': 'Graphic and web design practice based in Halifax, West Yorkshire, specialising in branding, editorial design, web design, and print.',
       'founder': { '@id': LEWIS_ID },
       'address': {
@@ -112,6 +118,7 @@ module.exports = {
   LEWIS_ID: LEWIS_ID,
   WEBSITE_ID: WEBSITE_ID,
   PRACTICE_ID: PRACTICE_ID,
+  OG_IMAGE: OG_IMAGE,
   IDENTITY_GRAPH: IDENTITY_GRAPH,
   IDENTITY_SCRIPT: IDENTITY_SCRIPT
 };

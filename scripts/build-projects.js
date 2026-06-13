@@ -113,6 +113,7 @@ function buildProjectHtml(project, idx) {
   <meta property="og:description" content="' + escapeHtml(firstParagraph) + '">\n\
   <meta property="og:url" content="' + SITE_URL + '/projects/' + project.slug + '/">\n\
   <meta property="og:type" content="article">\n\
+  <meta property="og:image" content="' + identity.OG_IMAGE + '">\n\
   <meta name="twitter:card" content="summary_large_image">\n\
 \n\
   <!-- Fonts -->\n\
