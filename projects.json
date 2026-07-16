@@ -1,5 +1,24 @@
 [
   {
+    "slug": "halifax-imps-website",
+    "title": "Halifax Imps Website",
+    "subtitle": "Web Design",
+    "year": "2026",
+    "category": "Website",
+    "layout": "grid-2",
+    "featured": false,
+    "thumbnail": "images/Imps 1.webp",
+    "color": "#7e7e7e",
+    "description": "A website tailor made for the needs of a cycling club.\n\nFor too long Halifax Imperial Wheelers had struggled with websites that weren't fit for purpose. As a small organisation they depended on cheap websites that didn't do what they needed it to. The brand didn't align, the images were unsuitable, the messaging was confused, and the website builders were designed with small businesses, not organisations, in mind.\n\nDesigned and built from the ground up, this website is clear in its core objective - to be a an appealing shop-window for would-be members to discover the club, and get them on the journey towards riding with us for the first time.\n\nStrong brand identity, accessible design, appealing imagery and encouraging tone-of-voice help the website achieve just that.",
+    "images": [
+      "images/Imps 1-1.webp",
+      "images/Imps 4.webp",
+      "images/Imps 2.webp",
+      "images/Imps 3.webp",
+      "images/Imps 5.webp"
+    ]
+  },
+  {
     "slug": "josh-and-joel",
     "title": "Josh & Joel",
     "subtitle": "Wedding Identity & Stationery",
