@@ -1,0 +1,23 @@
+{
+  "slug": "tandem-ai",
+  "title": "Tandem Teach AI",
+  "subtitle": "Web Design",
+  "year": "2026",
+  "category": "Website",
+  "layout": "grid-2",
+  "featured": false,
+  "thumbnail": "images/TT 2.webp",
+  "color": "#21a0be",
+  "description": "A modern, accessible design for a new educational AI tool.\n\nA new AI tool for teachers optimised for mobile and desktop. The brief was for a clean, uncluttered design, with  and WCAG accessibility compliance essential.",
+  "images": [
+    "images/TT 1.webp",
+    "images/TT 2-1.webp",
+    "images/TT 3.webp",
+    "images/TT 4.webp",
+    "images/TT 8.webp",
+    "images/TT 5.webp",
+    "images/TT 9.webp",
+    "images/TT 6.webp",
+    "images/TT 7.webp"
+  ]
+}
