@@ -45,16 +45,28 @@ var IDENTITY_GRAPH = {
       'email': 'hello@lewisclegg.co.uk',
       'description': 'A graphic designer based in Halifax, West Yorkshire, with expertise in branding, editorial design, and print. Experienced in creating cohesive brand identities, publication design, and visual systems for clients across the region.',
       'knowsAbout': ['Graphic Design', 'Web Design', 'Branding', 'Editorial Design', 'Print Design', 'Identity Design', 'Menu Design', 'Poster Design'],
-      'worksFor': {
-        '@type': 'Role',
-        'roleName': 'Director',
-        'worksFor': {
-          '@type': 'Organization',
-          '@id': 'https://hebblestone.org/#hebblestone',
-          'name': 'Hebble & Stone CIC',
-          'url': 'https://hebblestone.org/'
+      'worksFor': [
+        {
+          '@type': 'Role',
+          'roleName': 'Director',
+          'worksFor': {
+            '@type': 'Organization',
+            '@id': 'https://bedfordcoding.com/#bedfordcoding',
+            'name': 'Bedford Coding Ltd',
+            'url': 'https://bedfordcoding.com/'
+          }
+        },
+        {
+          '@type': 'Role',
+          'roleName': 'Director',
+          'worksFor': {
+            '@type': 'Organization',
+            '@id': 'https://hebblestone.org/#hebblestone',
+            'name': 'Hebble & Stone CIC',
+            'url': 'https://hebblestone.org/'
+          }
         }
-      },
+      ],
       'sameAs': [
         'https://www.linkedin.com/in/lewis-clegg-5aa031200/',
         'https://www.instagram.com/clegglewis/',
